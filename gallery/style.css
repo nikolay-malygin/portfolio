@@ -72,6 +72,7 @@ header .navbar-toggler:not(.collapsed) {
 header .navbar {
     background-color: var(--navbar-bg-color);
     backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
 }
 
 header .navbar .nav-link, header .navbar .nav-link *{
