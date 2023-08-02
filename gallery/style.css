@@ -1,0 +1,144 @@
+
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap');
+
+
+:root {
+    --transition-default: all 0.3s ease-in-out;
+
+    --bg-color-1: #081B29;
+    --bg-color-2: #112E42;
+    --accent-color: #00ABF0;
+
+    --navbar-bg-color: rgba(255, 255, 255, 0.05);
+
+    --color-text: white;
+    --muted-text-color: #B5A8B5;
+}
+
+/* Hide the scrollbar on the left side of the window/element */
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+
+html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    color: var(--color-text) !important;
+}
+
+body {
+    background-color: var(--bg-color-1);
+}
+
+*, *::after, *::before, *::placeholder {
+    font-family: 'Work Sans', sans-serif;
+    color: var(--color-text) !important;
+}
+
+.muted {
+    color: var(--muted-text-color) !important;
+}
+
+.popover-body, .popover-header {
+    color: var(--bg-color-1) !important;
+    text-align: center;
+}
+
+/* Navbar */
+header {
+    z-index: 1100;
+}
+
+header .navbar-toggler, header .navbar-toggler:active {
+    border: 2px solid var(--accent-color);
+    box-shadow: none !important;
+}
+
+header .navbar-toggler:not(.collapsed) {
+    box-shadow: 0 0 10px var(--accent-color) !important;
+}
+
+header .navbar {
+    background-color: var(--navbar-bg-color);
+    backdrop-filter: blur(40px);
+}
+
+header .navbar .nav-link, header .navbar .nav-link *{
+    transition: var(--transition-default);
+}
+
+header .navbar .nav-link:hover, header .navbar .nav-link:hover *{
+    color: var(--accent-color) !important;
+}
+
+
+/* Main */
+#images_container {
+    columns: 4;
+    column-gap: 20px;
+}
+
+@media (max-width: 768px) {
+    #images_container {
+        columns: 2;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    #images_container {
+        columns: 3;
+    }
+}
+
+#images_container .box {
+    width: 100%;
+    margin-bottom: 10px;
+    break-inside: avoid;
+}
+
+#images_container .box img {
+    max-width: 100%;
+    border-radius: 15px !important;
+}
+
+.btn-default {
+    max-width: fit-content;
+    background-color: var(--accent-color);
+    transition: var(--transition-default);
+}
+
+.btn-default:hover {
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color) !important;
+    background-color: transparent;
+}
+
+.btn-default:hover * {
+    color: inherit !important;
+}
+
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 5%;
+    right: 3%;
+    background-color: var(--accent-color);
+    transition: var(--transition-default);
+}
+
+#backToTopBtn:hover {
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+}
+
