@@ -68,6 +68,12 @@ body {
     color: var(--muted-text-color) !important;
 }
 
+/* a potential solution of the issue with rounded corners on iOS devices. */
+.rounded-4 {
+    border-radius: 1rem !important;
+    -webkit-border-radius: 1rem !important;
+}
+
 
 /* Header Navbar styles */
 header {
