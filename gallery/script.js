@@ -22,16 +22,11 @@ document.addEventListener('DOMContentLoaded', () =>
 {
     (async () => {
         try {
-            let response = await fetch('images/');
-            let data = await response.text();
+            let response = await fetch('https://api.github.com/repositories/673809542/contents/gallery/images');
+            let data = await response.json();
 
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(data, 'text/html');
-            const imageElements = htmlDoc.getElementsByTagName('a');
-
-            for (let i = 4; i < imageElements.length; i++) {
-                let href = imageElements[i].getAttribute('href');
-                hrefsArray.push(href);
+            for(let i = 0; i < data.length; i++) {
+                hrefsArray.push(data[i]['download_url']);
             }
 
             hrefsArray = shuffleArray(hrefsArray);
@@ -65,7 +60,7 @@ function shuffleArray(array)
 
 function appendImages(hrefs) {
     for (let i = 0; i < hrefs.length; i++) {
-        imagesContainer.innerHTML += `<div class="box"><img src="..${hrefs[i]}" alt="image"></div>`;
+        imagesContainer.innerHTML += `<div class="box"><img src="${hrefs[i]}" alt="image"></div>`;
     }
 }
 
