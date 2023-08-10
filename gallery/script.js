@@ -18,24 +18,22 @@ let hrefsArray = [];
 const imagesContainer = document.getElementById('images_container');
 const shuffleBtn = document.getElementById('shuffle-btn');
 
-document.addEventListener('DOMContentLoaded', () =>
+document.addEventListener('DOMContentLoaded', async () =>
 {
-    (async () => {
-        try {
-            let response = await fetch('https://api.github.com/repositories/673809542/contents/gallery/images');
-            let data = await response.json();
+    try {
+        let response = await fetch('https://api.github.com/repositories/673809542/contents/gallery/images');
+        let data = await response.json();
 
-            for(let i = 0; i < data.length; i++) {
-                hrefsArray.push(data[i]['download_url']);
-            }
+        for(let i = 0; i < data.length; i++) {
+            hrefsArray.push(data[i]['download_url']);
+        }
 
-            hrefsArray = shuffleArray(hrefsArray);
-            appendImages(hrefsArray);
-        }
-        catch (error) {
-            console.error("Error: " + error);
-        }
-    })();
+        hrefsArray = shuffleArray(hrefsArray);
+        appendImages(hrefsArray);
+    }
+    catch (error) {
+        console.error("Error: " + error);
+    }
 });
 
 shuffleBtn.onclick = () => {
@@ -60,7 +58,7 @@ function shuffleArray(array)
 
 function appendImages(hrefs) {
     for (let i = 0; i < hrefs.length; i++) {
-        imagesContainer.innerHTML += `<div class="box"><img src="${hrefs[i]}" alt="image"></div>`;
+        imagesContainer.innerHTML += `<div class="box"><img loading="lazy" src="${hrefs[i]}" alt="image"></div>`;
     }
 }
 
@@ -82,5 +80,3 @@ scrollToBottomBtn.onclick = () => {
         }
     }, 50);
 };
-
-
