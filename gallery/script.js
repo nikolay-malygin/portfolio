@@ -1,6 +1,6 @@
 // initialize all Bootstrap popovers
-const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
 
 // To top btn
 const backToTopBtn = document.getElementById('backToTopBtn');
@@ -12,6 +12,7 @@ window.onscroll = function() {
         backToTopBtn.style.display = 'none';
     }
 };
+
 
 // Load gallery-images from folder
 let hrefsArray = [];
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', async () =>
         appendImages(hrefsArray);
     }
     catch (error) {
-        console.error("Error: " + error);
+        console.log("Error: " + error);
     }
 });
 
