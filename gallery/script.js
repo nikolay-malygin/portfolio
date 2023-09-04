@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () =>
         let response = await fetch('https://api.github.com/repositories/673809542/contents/gallery/images');
         let data = await response.json();
 
-        for(let i = 0; i < data.length; i++) {
+        for (let i = 0; i < data.length; i++) {
             hrefsArray.push(data[i]['download_url']);
         }
 

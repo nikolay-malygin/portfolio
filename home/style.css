@@ -42,7 +42,7 @@ html {
     scroll-behavior: smooth;
 }
 
-*, *::after, *::before, *::placeholder {
+*, *::after, *:not(i)::before, *::placeholder {
     font-family: 'Work Sans', sans-serif;
     color: var(--text-color) !important;
 }
@@ -187,7 +187,6 @@ header .navbar .nav-link:hover, header .navbar .nav-link:hover *{
 .contact-icon {
     color: var(--accent-color) !important;
     background-color: transparent;
-    padding: .5rem;
     border-radius: 50%;
     transition: var(--transition-default);
     border: 1px solid var(--accent-color);
