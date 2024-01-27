@@ -1,296 +1,314 @@
-
 /* Font */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
-    --transition-default: all 0.3s ease-in-out;
+	--transition-default: all 0.3s ease-in-out;
 
-    --bg-color-1: #081B29;
-    --bg-color-2: #112E42;
-    --accent-color: #00ABF0;
+	--bg-color-1: #081b29;
+	--bg-color-2: #112e42;
+	--accent-color: #00abf0;
 
-    --navbar-bg-color: rgba(255, 255, 255, 0.05);
+	--navbar-bg-color: rgba(255, 255, 255, 0.05);
 
-    --card-color: #1E486A;
-    --card-border-color: #00ABF0;
-    --card-accent-color: #F9A825;
+	--card-color: #1e486a;
+	--card-border-color: #00abf0;
+	--card-accent-color: #f9a825;
 
-    --text-color: white;
-    --muted-text-color: #B5A8B5;
+	--text-color: white;
+	--muted-text-color: #b5a8b5;
 
-    --size-title: 7.2vh;
-    --size-subtitle: 3vh;
+	--size-title: 7.2vh;
+	--size-subtitle: 3vh;
 }
-
 
 /* Hide the scrollbar on the left side of the window/element */
 *::-webkit-scrollbar {
-    width: 0;
+	width: 0;
 }
 
 *::-webkit-scrollbar-track {
-    background-color: transparent;
+	background-color: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: transparent;
+	background-color: transparent;
 }
 
 html {
-    overflow-x: hidden;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	scroll-behavior: smooth;
 }
 
-*, *::after, *:not(i)::before, *::placeholder {
-    font-family: 'Work Sans', sans-serif;
-    color: var(--text-color) !important;
+*,
+*::after,
+*:not(i)::before,
+*::placeholder {
+	font-family: 'Inter', sans-serif;
+	color: var(--text-color) !important;
 }
 
 body {
-    background-color: var(--bg-color-1);
+	background-color: var(--bg-color-1);
+	line-height: 1.75 !important;
+	letter-spacing: 0.02rem !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	letter-spacing: -0.04375rem !important;
 }
 
 .bg-1 {
-    background-color: var(--bg-color-1) !important;
+	background-color: var(--bg-color-1) !important;
 }
 
 .bg-2 {
-    background-color: var(--bg-color-2) !important;
+	background-color: var(--bg-color-2) !important;
 }
 
 .text-accent {
-    color: var(--accent-color) !important;
+	color: var(--accent-color) !important;
 }
 
 .muted {
-    color: var(--muted-text-color) !important;
+	color: var(--muted-text-color) !important;
 }
 
-/* a potential solution of the issue with rounded corners on iOS devices. */
 .rounded-4 {
-    border-radius: 1rem !important;
-    -webkit-border-radius: 1rem !important;
+	border-radius: 1rem !important;
+	-webkit-border-radius: 1rem !important;
 }
-
 
 /* Header Navbar styles */
 header {
-    z-index: 4;
+	z-index: 4;
 }
 
-header .navbar-toggler, header .navbar-toggler:active {
-    border: 2px solid var(--accent-color);
-    box-shadow: none !important;
+header .navbar-toggler,
+header .navbar-toggler:active {
+	border: 2px solid var(--accent-color);
+	box-shadow: none !important;
 }
 
 header .navbar-toggler:not(.collapsed) {
-    box-shadow: 0 0 10px var(--accent-color) !important;
+	box-shadow: 0 0 10px var(--accent-color) !important;
 }
 
 header .navbar {
-    background-color: var(--navbar-bg-color);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+	background-color: var(--navbar-bg-color);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
 }
 
-header .navbar .nav-link, header .navbar .nav-link *{
-    transition: var(--transition-default);
+header .navbar .nav-link,
+header .navbar .nav-link * {
+	transition: var(--transition-default);
 }
 
-header .navbar .nav-link:hover, header .navbar .nav-link:hover *{
-    color: var(--accent-color) !important;
+header .navbar .nav-link:hover,
+header .navbar .nav-link:hover * {
+	color: var(--accent-color) !important;
 }
-
 
 /* Home section styles */
 .home-section {
-    min-height: 92vh;
+	min-height: 92vh;
 }
 
 .title {
-    font-size: var(--size-title);
-    font-weight: bold;
+	font-size: var(--size-title);
+	font-weight: bold;
 }
 
 .subtitle {
-    font-size: var(--size-subtitle);
+	font-size: var(--size-subtitle);
 }
 
 .text-animated {
-    font-family: sans-serif;
-    position: relative;
-    color: var(--bg-color-1) !important;
+	font-family: sans-serif;
+	position: relative;
+	color: var(--bg-color-1) !important;
 
-    -webkit-text-stroke: 0.1vw var(--accent-color);
-    max-width: fit-content;
+	-webkit-text-stroke: 0.1vw var(--accent-color);
+	max-width: fit-content;
 }
 
 .text-animated::before {
-    font-family: inherit;
-    content: attr(data-text);
-    position: absolute;
-    white-space: nowrap;
+	font-family: inherit;
+	content: attr(data-text);
+	position: absolute;
+	white-space: nowrap;
 
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    color: var(--accent-color) !important;
+	top: 0;
+	left: 0;
+	width: 0%;
+	height: 100%;
+	color: var(--accent-color) !important;
 
-    /* Cursor width */
-    border-right: 3px solid var(--accent-color);
-    overflow: hidden;
+	/* Cursor width */
+	border-right: 3px solid var(--accent-color);
+	overflow: hidden;
 
-    animation: text-animated 4.5s linear infinite alternate, cursor 0.45s step-end infinite alternate;
+	animation: text-animated 4.5s linear infinite alternate,
+		cursor 0.45s step-end infinite alternate;
 }
 
 @keyframes cursor {
-    50% {
-        border-color: transparent;
-    }
+	50% {
+		border-color: transparent;
+	}
 }
 
 @keyframes text-animated {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 102%;
-    }
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 102%;
+	}
 }
 
 .home-img {
-    width: 100%;
-    max-height: 92vh;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
+	width: 100%;
+	max-height: 92vh;
+	height: 100%;
+	object-fit: cover;
+	object-position: top center;
 }
 
 .btn-default {
-    max-width: fit-content;
-    background-color: var(--accent-color);
-    transition: var(--transition-default);
+	max-width: fit-content;
+	background-color: var(--accent-color);
+	transition: var(--transition-default);
 }
 
 .btn-default:hover {
-    border: 1px solid var(--accent-color);
-    color: var(--accent-color) !important;
-    background-color: transparent;
+	border: 1px solid var(--accent-color);
+	color: var(--accent-color) !important;
+	background-color: transparent;
 }
 
 .btn-default:hover * {
-    color: inherit !important;
+	color: inherit !important;
 }
 
 .contact-icon {
-    color: var(--accent-color) !important;
-    background-color: transparent;
-    border-radius: 50%;
-    transition: var(--transition-default);
-    border: 1px solid var(--accent-color);
-    max-width: fit-content;
-    max-height: fit-content;
+	color: var(--accent-color) !important;
+	background-color: transparent;
+	border-radius: 50%;
+	transition: var(--transition-default);
+	border: 1px solid var(--accent-color);
+	max-width: fit-content;
+	max-height: fit-content;
 }
 
 .contact-icon:hover {
-    background-color: var(--accent-color);
-    color: var(--text-color) !important;
-    cursor: pointer;
+	background-color: var(--accent-color);
+	color: var(--text-color) !important;
+	cursor: pointer;
 }
 
 .contact-icon:active {
-    background-color: transparent !important;
+	background-color: transparent !important;
 }
 
 .popover-body {
-    color: var(--bg-color-1) !important;
+	color: var(--bg-color-1) !important;
 }
-
 
 /* About Me styles */
 
 .about-img {
-    width: 80%;
-    border: 3px solid var(--accent-color);
-    border-radius: 50%;
-    background-color: var(--bg-color-1);
+	width: 80%;
+	border: 3px solid var(--accent-color);
+	border-radius: 50%;
+	background-color: var(--bg-color-1);
 }
 
-#about-me p a, #hobbies p a {
-    text-decoration: none;
-    color: var(--accent-color) !important;
+#about-me p a,
+#hobbies p a {
+	text-decoration: none;
+	color: var(--accent-color) !important;
 }
 
-#about-me p a:hover, #hobbies p a:hover {
-    border-bottom: 1px solid var(--accent-color);
+#about-me p a:hover,
+#hobbies p a:hover {
+	border-bottom: 1px solid var(--accent-color);
 }
-
 
 /* My Skills and hobbies styles */
 
 .skill-card {
-    background-color: var(--card-color);
-    background: var(--bg-color-2);
+	background-color: var(--card-color);
+	background: var(--bg-color-2);
 }
 
 .hobby-card {
-    background-color: var(--card-color);
-    background: var(--bg-color-1);
+	background-color: var(--card-color);
+	background: var(--bg-color-1);
 }
 
 .card-hr {
-    border: 2px solid rgba(255, 255, 255, 1);
+	border: 2px solid rgba(255, 255, 255, 1);
 }
 
 .card-accent {
-    color: var(--card-accent-color) !important;
+	color: var(--card-accent-color) !important;
 }
 
-.skill-card, .hobby-card {
-    position: relative;
-    overflow: hidden;
-    height: 100%;
+.skill-card,
+.hobby-card {
+	position: relative;
+	overflow: hidden;
+	height: 100%;
 }
 
-.skill-card::before, .hobby-card::before {
-    content: '';
-    position: absolute;
-    top: -45%;
-    left: 30%;
+.skill-card::before,
+.hobby-card::before {
+	content: '';
+	position: absolute;
+	top: -45%;
+	left: 30%;
 
-    width: 35%;
-    height: 200%;
-    background: var(--accent-color);
-    animation: animated-border 10s linear infinite;
-    z-index: 1;
+	width: 35%;
+	height: 200%;
+	background: var(--accent-color);
+	animation: animated-border 10s linear infinite;
+	z-index: 1;
 }
 
-.skill-card::after, .hobby-card::after {
-    content: '';
-    position: absolute;
-    background-color: var(--card-color);
-    inset: 3px;
-    border-radius: .8rem;
-    z-index: 2;
+.skill-card::after,
+.hobby-card::after {
+	content: '';
+	position: absolute;
+	background-color: var(--card-color);
+	inset: 3px;
+	border-radius: 0.8rem;
+	z-index: 2;
 }
 
 @keyframes animated-border {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
-.skill-card *, .hobby-card * {
-    position: relative;
-    z-index: 3;
+.skill-card *,
+.hobby-card * {
+	position: relative;
+	z-index: 3;
 }
 
 .underlined {
-    border-bottom: 3px solid var(--accent-color);
-    padding-bottom: 5px;
+	border-bottom: 3px solid var(--accent-color);
+	padding-bottom: 5px;
 }
